@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -22,6 +23,28 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int[] voteResult = intent.getIntArrayExtra("VoteCount");
         String[] imageName = intent.getStringArrayExtra("ImageName");
+
+
+        Integer[] imageFileId = {R.drawable.pic1, R.drawable.pic2, R.drawable.pic3, R.drawable.pic4, R.drawable.pic5,
+                                R.drawable.pic6, R.drawable.pic7, R.drawable.pic8, R.drawable.pic9};
+
+        // 1등 그림이름과 그리파일을 보여줌
+        TextView textViewTop = findViewById(R.id.tvTop);
+        ImageView imageViewTop = findViewById(R.id.ivTop);
+        int maxEntry = 0;
+        for (int i = 1; i < voteResult.length; i++) {
+            if (voteResult[maxEntry] < voteResult[i])
+                maxEntry = i;
+        }
+
+        textViewTop.setText(imageName[maxEntry]);
+        imageViewTop.setImageResource(imageFileId[maxEntry]);
+
+
+
+
+
+
 
         // 9개의 TextView, RationBar 객체배열 생성
         TextView[] textViews = new TextView[imageName.length];

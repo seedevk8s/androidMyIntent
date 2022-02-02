@@ -7,6 +7,26 @@
 
     <TableRow>
         <TextView
+            android:id="@+id/tvTop"
+            android:layout_gravity="center"
+            android:layout_span="2"
+            android:text="## 우승 그림 : "
+            android:textSize="15dp"/>
+    </TableRow>
+
+    <TableRow>
+        <ImageView
+            android:id="@+id/ivTop"
+            android:scaleType="fitCenter"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:layout_span="2"
+            android:src="@drawable/pic1"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
             android:id="@+id/tv1"
             android:layout_gravity="center_vertical"
             android:text="그림1"
